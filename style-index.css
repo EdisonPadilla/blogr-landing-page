@@ -86,6 +86,21 @@ ul {
   margin-left: 4px;
 }
 
+#product-arrow.rotate-arrow {
+  color: #2c2d3f;
+  transform: rotate(180deg);
+}
+
+#company-arrow.rotate-arrow {
+  color: #2c2d3f;
+  transform: rotate(180deg);
+}
+
+#connect-arrow.rotate-arrow {
+  color: #2c2d3f;
+  transform: rotate(180deg);
+}
+
 .btn-signup {
   padding: 8px 16px;
   border-radius: 50px;
