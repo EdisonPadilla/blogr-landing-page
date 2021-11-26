@@ -114,9 +114,9 @@ ul {
   transform: rotate(180deg);
 }
 
-.product-options-list.show-product,
-.company-options-list.show-company,
-.connect-options-list.show-connect {
+.product-options-list.show-list-options,
+.company-options-list.show-list-options,
+.connect-options-list.show-list-options {
   display: block;
   position: absolute;
   left: 0;

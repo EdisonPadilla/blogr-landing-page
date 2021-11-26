@@ -11,15 +11,15 @@ const connectOptionsList = d.querySelector(".connect-options-list");
 
 productOption.addEventListener("click", () => {
   productArrow.classList.toggle("rotate-arrow");
-  productOptionsList.classList.toggle("show-product");
+  productOptionsList.classList.toggle("show-list-options");
 });
 
 companyOption.addEventListener("click", () => {
   companyArrow.classList.toggle("rotate-arrow");
-  companyOptionsList.classList.toggle("show-company");
+  companyOptionsList.classList.toggle("show-list-options");
 });
 
 connectOption.addEventListener("click", () => {
   connectArrow.classList.toggle("rotate-arrow");
-  connectOptionsList.classList.toggle("show-connect");
+  connectOptionsList.classList.toggle("show-list-options");
 });
