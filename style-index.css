@@ -68,15 +68,6 @@ ul {
   align-items: center;
 }
 
-.nav-main ul li {
-  padding: 0 10px;
-}
-
-.nav-main ul li a {
-  padding: 0 2px;
-  color: var(--white-text);
-}
-
 .nav-main ul.nav-menu {
   flex: 1;
   margin-left: 32px;
@@ -84,18 +75,40 @@ ul {
 
 .nav-menu ul {
   padding: 24px 0;
-  line-height: 1.5;
+  line-height: 2;
   background-color: var(--white-text);
   border-radius: 4px;
   width: 100%;
+  opacity: 0.6;
   display: none;
 }
 
 .nav-menu li {
   position: relative;
+  padding: 0 24px;
+}
+
+.nav-menu li span {
+  padding: 0 8px;
+}
+
+.nav-menu li span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nav-menu li i {
+  margin-left: 4px;
+  /*transition duration hace que el icono de la flecha el momento de rotarlo con la clase rotate-arrow no sea tan brusco el giro sino que dure 350ms esa rotacion haciendo que se vea mas fluido*/
+  transition-duration: 350ms;
+}
+
+.nav-menu ul li {
+  padding-left: 16px;
 }
 
 .nav-menu ul li a {
+  padding-left: 8px;
   color: var(--very-dark-black-blue-footer-background);
 }
 
@@ -104,22 +117,17 @@ ul {
   font-weight: bold;
 }
 
-.nav-menu i {
-  margin-left: 4px;
+.nav-menu-right li {
+  padding: 0 16px;
 }
 
-.product-arrow.rotate-arrow,
-.company-arrow.rotate-arrow,
-.connect-arrow.rotate-arrow {
-  transform: rotate(180deg);
+.nav-menu-right li a {
+  padding: 0 2px;
+  color: var(--white-text);
 }
 
-.product-options-list.show-list-options,
-.company-options-list.show-list-options,
-.connect-options-list.show-list-options {
-  display: block;
-  position: absolute;
-  left: 0;
+.nav-menu-right li a:hover {
+  text-decoration: underline;
 }
 
 .btn-signup {
@@ -129,6 +137,24 @@ ul {
   font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
+}
+
+/*estilos para cuando se agregan las clases show-list-options y rotate-arrow desde el archivo menu-functionality.js*/
+
+.product-options-list.show-list-options,
+.company-options-list.show-list-options,
+.connect-options-list.show-list-options {
+  display: block;
+  position: absolute;
+  left: 0;
+  /*agregamos aqui la animacion porque aqui es donde se muestra las listas entonces al mostrarlas con la animacion cambiara el opacity: 0 que tiene originalmente del nav-menu ul a opacity: 1 de la animacion en un tiempo de 350ms con ease-in-out que es entrada rapido en el medio lento y salida rapida*/
+  animation: show-options-animation 400ms ease-in-out both;
+}
+
+.product-arrow.rotate-arrow,
+.company-arrow.rotate-arrow,
+.connect-arrow.rotate-arrow {
+  transform: rotate(180deg);
 }
 
 /*intro header*/
@@ -487,4 +513,15 @@ ul {
   .list-title {
     margin: 48px 0 32px 0;
   }
+}
+
+@keyframes show-options-animation {
+  /*la propiedad inicial del objeto que queremos o vamos a animar en este caso es la propiedad opacity del .nav-menu ul porque en este estan las propiedades que muestran la lista de opciones para product, company, connect*/
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  /*y le ponemos el valor al que debe llegar*/
 }
