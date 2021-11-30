@@ -57,19 +57,49 @@ ul {
 
 /*navigation*/
 
+.ham-btn {
+  display: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.ham-btn span {
+  display: block;
+  height: 3px;
+  width: 28px;
+  margin: 10px auto;
+  background-color: var(--white-text);
+  border-radius: 2px;
+}
+
 .nav-main {
+  margin-bottom: 96px;
+  text-align: initial;
   display: flex;
+  /*justify-content: flex-start;*/
+  align-items: center;
+}
+
+.nav-menus-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
 }
 
-.nav-main ul {
+.nav-menus-box ul {
   display: flex;
   align-items: center;
 }
 
-.nav-main ul.nav-menu {
+/*.nav-main ul.nav-menu {
   flex: 1;
+  margin-left: 32px;
+}*/
+
+.nav-menu {
   margin-left: 32px;
 }
 
@@ -100,7 +130,7 @@ ul {
 .nav-menu li i {
   margin-left: 4px;
   /*transition duration hace que el icono de la flecha el momento de rotarlo con la clase rotate-arrow no sea tan brusco el giro sino que dure 350ms esa rotacion haciendo que se vea mas fluido*/
-  transition-duration: 350ms;
+  transition-duration: 400ms;
 }
 
 .nav-menu ul li {
@@ -148,7 +178,7 @@ ul {
   position: absolute;
   left: 0;
   /*agregamos aqui la animacion porque aqui es donde se muestra las listas entonces al mostrarlas con la animacion cambiara el opacity: 0 que tiene originalmente del nav-menu ul a opacity: 1 de la animacion en un tiempo de 350ms con ease-in-out que es entrada rapido en el medio lento y salida rapida*/
-  animation: show-options-animation 400ms ease-in-out both;
+  animation: show-opacity-animation 400ms ease-in-out both;
 }
 
 .product-arrow.rotate-arrow,
@@ -189,19 +219,9 @@ ul {
   z-index: -1;
 }
 
-.nav-main {
-  margin-bottom: 96px;
-  text-align: initial;
-}
-
 .nav-brand {
   width: 64px;
   height: auto;
-}
-
-.menu-btn i {
-  display: none;
-  /*font-size: 1.5rem;*/
 }
 
 .title-header {
@@ -408,32 +428,141 @@ ul {
   }
 
   .nav-main {
+    position: relative;
     margin-bottom: 96px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
   }
 
-  .nav-brand {
-    width: 64px;
-    height: auto;
-  }
-
-  .nav-main ul.nav-menu {
+  .nav-menus-box {
     display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 0 5%;
+    background-color: var(--white-text);
+    border-radius: 4px;
+    box-shadow: 0px 2px 16px 0px var(--very-dark-grayish-blue-body-copy);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .nav-menus-box.show-menu {
+    display: block;
+    position: absolute;
+    top: 48px;
+    animation: show-opacity-animation 400ms ease-in-out both;
+  }
+
+  .nav-menus-box ul {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    color: var(--very-dark-black-blue-footer-background);
+  }
+
+  .nav-menu {
+    margin-left: 0;
+  }
+
+  .nav-menu ul {
+    padding: 12px 0;
+    background-color: var(--grayish-blue-footer-text);
+  }
+
+  .nav-menu li {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .nav-menu li span {
+    padding: 4px 0;
+  }
+
+  .nav-menu li span:hover {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .nav-menu li i {
+    color: var(--very-light-red-cta-hover-background);
+  }
+
+  .nav-menu ul li {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    padding-left: 0;
+  }
+
+  .nav-menu ul li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-menu-right {
+    padding: 16px 0;
+    border-top: 1px solid var(--grayish-blue-footer-text);
   }
 
   .nav-menu-right li {
-    display: none;
+    padding: 8px 0;
+  }
+  .nav-menu-right li a {
+    padding: 2px 0;
+    color: var(--very-dark-black-blue-footer-background);
   }
 
-  .menu-btn i {
-    font-size: 1.5rem;
-    color: white;
+  .nav-menu-right li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .btn-signup {
+    color: var(--white-text);
+    background-image: linear-gradient(
+      to bottom,
+      #ff8f70,
+      #ff7e66,
+      #ff6c5e,
+      #ff5758,
+      #ff3d54
+    );
+  }
+
+  .ham-btn {
+    display: block;
     position: absolute;
-    z-index: 1;
+    top: 16px;
     right: 5%;
-    top: 32px;
+    z-index: 1;
+  }
+
+  .ham-btn span {
+    transition-duration: 350ms;
+  }
+
+  .br-1.animation {
+    transform: rotate(-45deg) translate(-10px, 8px);
+  }
+
+  .br-2.animation {
+    opacity: 0;
+  }
+
+  .br-3.animation {
+    transform: rotate(45deg) translate(-10px, -8px);
+  }
+
+  .product-options-list.show-list-options,
+  .company-options-list.show-list-options,
+  .connect-options-list.show-list-options {
+    position: relative;
+    left: none;
   }
 
   .title-header {
@@ -515,7 +644,7 @@ ul {
   }
 }
 
-@keyframes show-options-animation {
+@keyframes show-opacity-animation {
   /*la propiedad inicial del objeto que queremos o vamos a animar en este caso es la propiedad opacity del .nav-menu ul porque en este estan las propiedades que muestran la lista de opciones para product, company, connect*/
   from {
     opacity: 0;
