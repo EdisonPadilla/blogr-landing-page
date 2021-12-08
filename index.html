@@ -20,17 +20,6 @@
     />
     <!-- My Custom Css-->
     <link rel="stylesheet" href="style-index.css" />
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
@@ -43,12 +32,12 @@
         <nav class="nav-main">
           <img src="./images/logo.svg" alt="" class="nav-brand" />
           <div class="nav-menus-box">
-            <ul class="nav-menu">
-              <li class="nav-menu-product">
-                <span class="product-option" href="#"
-                  >Product<i class="fas fa-angle-down product-arrow"></i
-                ></span>
-                <ul class="product-options-list">
+            <ul class="nav-menus nav-menu">
+              <li class="box-nav-menu-option">
+                <a href="#" class="nav-menu-option-link submenu-btn"
+                  >Product<i class="fas fa-angle-down arrow"></i
+                ></a>
+                <ul class="submenu">
                   <li><a href="#">Overview</a></li>
                   <li><a href="#">Pricing</a></li>
                   <li><a href="#">Marketplace</a></li>
@@ -56,28 +45,28 @@
                   <li><a href="#">Integrations</a></li>
                 </ul>
               </li>
-              <li>
-                <span class="company-option" href="#"
-                  >Company<i class="fas fa-angle-down company-arrow"></i
-                ></span>
-                <ul class="company-options-list">
+              <li class="box-nav-menu-option">
+                <a href="#" class="nav-menu-option-link submenu-btn"
+                  >Company<i class="fas fa-angle-down arrow"></i
+                ></a>
+                <ul class="submenu">
                   <li><a href="#">Team</a></li>
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">Careers</a></li>
                 </ul>
               </li>
-              <li>
-                <span class="connect-option" href="#"
-                  >Connect<i class="fas fa-angle-down connect-arrow"></i
-                ></span>
-                <ul class="connect-options-list">
+              <li class="box-nav-menu-option">
+                <a href="#" class="nav-menu-option-link submenu-btn"
+                  >Connect<i class="fas fa-angle-down arrow"></i
+                ></a>
+                <ul class="submenu">
                   <li><a href="#">Contact</a></li>
                   <li><a href="#">Newsletter</a></li>
                   <li><a href="#">LinkedIn</a></li>
                 </ul>
               </li>
             </ul>
-            <ul class="nav-menu-right">
+            <ul class="nav-menus nav-menu-right">
               <li><a href="#">Login</a></li>
               <li><button class="btn-signup">Sign Up</button></li>
             </ul>
@@ -163,7 +152,7 @@
           <img src="./images/logo.svg" alt="" />
         </figure>
         <article>
-          <p class="list-title">Product</p>
+          <h4 class="list-title">Product</h4>
           <ul>
             <li><a href="#">Overview</a></li>
             <li><a href="#">Pricing</a></li>
@@ -173,7 +162,7 @@
           </ul>
         </article>
         <article>
-          <p class="list-title">Company</p>
+          <h4 class="list-title">Company</h4>
           <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Team</a></li>
@@ -182,7 +171,7 @@
           </ul>
         </article>
         <article>
-          <p class="list-title">Connect</p>
+          <h4 class="list-title">Connect</h4>
           <ul>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Newsletter</a></li>
@@ -196,7 +185,10 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by
+      <a href="https://github.com/EdisonPadilla" target="_blank"
+        >Edison Padilla</a
+      >.
     </div>
 
     <script src="./menu-functionality.js"></script>
