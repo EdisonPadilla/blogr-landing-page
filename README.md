@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [repository solution](https://github.com/EdisonPadilla/blogr-landing-page)
-- Live Site URL: [live site github page](https://your-live-site-url.com)
+- Live Site URL: [live site github page](https://edisonpadilla.github.io/blogr-landing-page/)
 
 ## My process
 
